@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+:root {
+  --main-color: #092952;
+  --green-border: #49a83d;
+  --bg-red: #d4223a;
+  --regular-border: #93a4bf;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 120px;
+}
+
+body {
+  background-color: var(--main-color);
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+#titulo-container {
+  background-color: #fff;
+  text-align: center;
+  padding: 10px;
+  color: var(--main-color);
+}
+
+#placar-container {
+  border: 3px solid var(--green-border);
+  width: 200px;
+  margin: 20px auto;
+  position: relative;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#pontuacao {
+  font-size: 36px;
+  text-align: center;
+}
+
+.label {
+  background-color: var(--bg-red);
+  position: absolute;
+  padding: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+  top: 30%;
+}
+
+#jogador-placar {
+  left: -15%;
+
+}
+
+#computador-placar {
+  right: -20%;
+}
+
+#mensagem-resultado {
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 25px;
+  font-weight: bold;
+}
+
+#jogadas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.opcao {
+  margin: 0 30px;
+  border: 2px solid var(--regular-border);
+  border-radius: 50%;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.5s background-color;
+}
+
+.opcao:hover {
+  background-color: #3a5374;
+}
+
+#mensagem-clique {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+@media (max-width: 375px) {
+  #jogadas {
+    flex-direction: column;
+  }
+}
+
