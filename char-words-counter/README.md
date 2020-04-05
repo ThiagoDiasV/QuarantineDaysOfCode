@@ -1,1 +1,1 @@
-# Char-counter
+# Char-words-counter
