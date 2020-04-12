@@ -19,10 +19,11 @@ def index():
     request = requests.get('https://api.covid19.finspect.me/brcovid19/map')
 
     # Atribuindo o JSON recebido a uma variável
+    states_data = request.json()
 
     # Pegando a data atual
     date = datetime.now().strftime(format="%d/%m/%Y")
-    states_data = request.json()
+
     return render_template('index.html', states=states_data, date=date)  
 
 
