@@ -1,4 +1,5 @@
-from app import app
+# routes.py
+from app import app  # aqui precisamos importar o app criado no __init__.py
 from flask import render_template
 import requests
 from datetime import datetime

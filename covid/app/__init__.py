@@ -1,4 +1,4 @@
-# main.py
+# __init__.py
 
 # Imports necessários
 from flask import Flask
