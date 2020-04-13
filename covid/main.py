@@ -2,15 +2,11 @@
 
 # Imports necessários
 from flask import Flask, render_template
-from flask_bootstrap import Bootstrap
 import requests
 from datetime import datetime
 
 # Criando nosso app
 app = Flask(__name__)
-
-# Etapa necessária para estilizar nosso app usando o Bootstrap
-Bootstrap(app)
 
 # Criando nossa primeira rota
 @app.route('/')
@@ -25,7 +21,3 @@ def index():
     date = datetime.now().strftime(format="%d/%m/%Y")
 
     return render_template('index.html', states=states_data, date=date)  
-
-
-# Rodando nosso app
-app.run()
