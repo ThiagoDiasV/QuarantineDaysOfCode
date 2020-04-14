@@ -17,3 +17,13 @@ def index():
     date = datetime.now().strftime(format="%d/%m/%Y")
 
     return render_template('index.html', states=states_data, date=date)  
+
+
+@app.route('/brasil')
+def brazil():
+    return "<h1>Hello Brasil!</h1>"
+
+
+@app.route('/mundo')
+def world():
+    return "<h1>Hello Mundo!</h1>"
