@@ -14,12 +14,12 @@
 }
 
 img {
-  width: 120px;
+  width: 150px;
 }
 
 body {
   background-color: var(--main-color);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #fff;
 }
 
@@ -55,7 +55,6 @@ body {
 
 #jogador-placar {
   left: -15%;
-
 }
 
 #computador-placar {
@@ -77,10 +76,10 @@ body {
 }
 
 .opcao {
-  margin: 0 30px;
+  margin: 0 50px;
   border: 2px solid var(--regular-border);
   border-radius: 50%;
-  padding: 20px;
+  padding: 40px;
   cursor: pointer;
   transition: 0.5s background-color;
 }
@@ -95,9 +94,18 @@ body {
   font-size: 24px;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 576px) {
   #jogadas {
     flex-direction: column;
   }
+  .opcao {
+    margin: 5px 0;
+    padding: 16px;
+  }
+  img {
+    width: 100px;
+  }
+  #mensagem-resultado {
+    padding-bottom: 5px;
+  }
 }
-

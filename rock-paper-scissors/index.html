@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Pedra Papel e Tesoura</title>
   </head>
   <body>
@@ -15,7 +15,9 @@
       <div id="jogador-placar" class="label">Jogador</div>
       <div id="computador-placar" class="label">Computador</div>
       <div id="pontuacao">
-        <span id="pontuacao-jogador">0</span>:<span>0</span>
+        <span id="pontuacao-jogador">0</span>:<span id="pontuacao-computador"
+          >0</span
+        >
       </div>
     </div>
     <div id="container-resultado">
@@ -23,11 +25,16 @@
     </div>
     <div id="jogadas">
       <div id="pedra" class="opcao"><img src="img/rock.png" alt="Pedra" /></div>
-      <div id="papel" class="opcao"><img src="img/paper.png" alt="Papel" /></div>
-      <div id="tesoura" class="opcao"><img src="img/scissor.png" alt="Tesoura" /></div>
+      <div id="papel" class="opcao">
+        <img src="img/paper.png" alt="Papel" />
+      </div>
+      <div id="tesoura" class="opcao">
+        <img src="img/scissor.png" alt="Tesoura" />
+      </div>
     </div>
     <div id="mensagem-clique">
       <p>Clique para jogar!</p>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>
