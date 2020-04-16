@@ -8,7 +8,7 @@ O projeto foi feito em Python usando o microframework Flask. Então é necessár
 
 O projeto foi feito usando a versão 3.8.2 da linguagem.
 
-Com o Python instalado, faça o clone deste repositório ou baixe o zip e dentro da pasta crie um ambiente virtual:
+Com o Python instalado, faça o clone deste repositório ou baixe o zip e dentro da pasta **covid** crie um ambiente virtual:
 
     $ python -m venv venv
 
