@@ -5,10 +5,15 @@ import requests
 from datetime import datetime
 
 # Criando nossa primeira rota
-@app.route('/')
+@app.route("/")
 def index():
+    return render_template("index.html")
+
+
+@app.route("/brasil")
+def brazil():
     # Fazendo a requisição para a API
-    request = requests.get('https://api.covid19.finspect.me/brcovid19/map')
+    request = requests.get("https://api.covid19.finspect.me/brcovid19/map")
 
     # Atribuindo o JSON recebido a uma variável
     states_data = request.json()
@@ -16,14 +21,9 @@ def index():
     # Pegando a data atual
     date = datetime.now().strftime(format="%d/%m/%Y")
 
-    return render_template('index.html', states=states_data, date=date)  
+    return render_template("brazil.html", states=states_data, date=date)
 
 
-@app.route('/brasil')
-def brazil():
-    return "<h1>Hello Brasil!</h1>"
-
-
-@app.route('/mundo')
+@app.route("/mundo")
 def world():
-    return "<h1>Hello Mundo!</h1>"
+    return render_template("world.html", world="World")

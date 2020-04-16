@@ -1,75 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <title>Covid-19</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white mb-4">
-      <div class="container">
-        <a href="#" class="navbar-brand">Covid-19</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbar-content"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar-content">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a href="{{ url_for('brazil') }}" class="nav-link">Brasil</a>
-            </li>
-            <li class="nav-item">
-              <a href="{{ url_for('world') }}" class="nav-link">Mundo</a>
-            </li>
-          </ul>
-        </div>
+{% extends "base.html" %} {% block content %}
+<h1 class="text-center mb-3">
+  Dados sobre a Covid-19 no Brasil e no mundo
+</h1>
+<div class="row">
+  <div class="col-md-7">
+    <p class="text-justify">
+      Este é um site informativo sobre a Covid-19, doença causada pelo novo
+      coronavírus (Sars-Cov-2).
+    </p>
+    <p class="text-justify">
+      O site acessa dados desta
+      <a href="https://doc.covid.finspect.me/">API</a>, que busca dados do
+      DATASUS, e desta
+      <a href="https://rapidapi.com/Gramzivi/api/covid-19-data/details">API</a>,
+      que contém dados do mundo.
+    </p>
+    <p>
+      Site em construção.
+    </p>
+  </div>
+  <div class="col-md-5">
+    <div class="card bg-light mb-3">
+      <div class="card-header">Números do mundo</div>
+      <div class="card-body">
+        <h5 class="card-title">Dados totais</h5>
+        <ul class="list-group">
+          <li class="list-group-item">
+            Confirmados:
+            <span></span>
+          </li>
+          <li class="list-group-item">Recuperados: <span></span></li>
+          <li class="list-group-item">Mortes: <span></span></li>
+        </ul>
       </div>
-    </nav>
-    <div class="container">
-      <h1 class="text-center">Casos de Covid-19 no Brasil</h1>
-      <p class="text-center">
-        Dados por estado da federação, atualizados em {{ date }}
-      </p>
-      <!-- Tabela criada já com as classes Bootstrap -->
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Estado</th>
-            <th scope="col">Número de casos</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Laço for agora iterando sobre cada estado do JSON -->
-          {% for state in states %}
-          <tr scope="row">
-            <!-- Os dados do laço -->
-            <td>{{ state["name"] }}</td>
-            <td>{{ state["qtd_confirmation"] }}</td>
-          </tr>
-          <!-- No template nós devemos sinalizar o fim do for com um endfor -->
-          {% endfor %}
-        </tbody>
-      </table>
     </div>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
+  </div>
+</div>
+{% endblock %}
