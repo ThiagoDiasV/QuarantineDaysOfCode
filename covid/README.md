@@ -20,7 +20,7 @@ No Windows:
 
 No Linux e Mac:
 
-    $ source/venv/bin/activate
+    $ source /venv/bin/activate
 
 Você verá que agora seu terminal mostra o nome do ambiente virtual antes da linha de comando:
 
