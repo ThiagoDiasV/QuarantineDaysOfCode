@@ -1,6 +1,6 @@
 # Covid-19
 
-Projeto em Flask de criação de um site informativo sobre a pandemia de Covid-19
+Projeto em Flask de criação de um site informativo sobre a pandemia de Covid-19.
 
 ## Como rodar
 
