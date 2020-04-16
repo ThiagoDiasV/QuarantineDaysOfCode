@@ -27,10 +27,14 @@
         <ul class="list-group">
           <li class="list-group-item">
             Confirmados:
-            <span></span>
+            <span>{{ world_data["confirmed"] }}</span>
           </li>
-          <li class="list-group-item">Recuperados: <span></span></li>
-          <li class="list-group-item">Mortes: <span></span></li>
+          <li class="list-group-item">
+            Recuperados: <span>{{ world_data["recovered"] }}</span>
+          </li>
+          <li class="list-group-item">
+            Mortes: <span>{{ world_data["deaths"] }}</span>
+          </li>
         </ul>
       </div>
     </div>

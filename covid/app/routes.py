@@ -7,7 +7,16 @@ from datetime import datetime
 # Criando nossa primeira rota
 @app.route("/")
 def index():
-    return render_template("index.html")
+    request = requests.get('https://api.covid19.finspect.me/covid19/total')
+
+    world_total_data = request.json()[0]
+
+    world_data = {
+        key: value for key, value in world_total_data.items() 
+        if key == "confirmed" or key == "deaths" or key == "recovered"
+        }
+
+    return render_template("index.html", world_data=world_data)
 
 
 @app.route("/brasil")
