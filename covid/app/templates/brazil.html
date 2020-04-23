@@ -1,26 +1,41 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% block content %}
 <h1 class="text-center">Casos de Covid-19 no Brasil</h1>
 <p class="text-center">
   Dados por estado da federação, atualizados em {{ date }}
 </p>
 <!-- Tabela criada já com as classes Bootstrap -->
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Estado</th>
-      <th scope="col">Número de casos</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Laço for agora iterando sobre cada estado do JSON -->
-    {% for state in states %}
-    <tr scope="row">
-      <!-- Os dados do laço -->
-      <td>{{ state["name"] }}</td>
-      <td>{{ state["qtd_confirmation"] }}</td>
-    </tr>
-    <!-- No template nós devemos sinalizar o fim do for com um endfor -->
-    {% endfor %}
-  </tbody>
-</table>
+<div class="row">
+  <div class="col-lg-8">
+    <h2>Gráficos</h2>
+    <div class="chart-container">
+      <canvas id="chart"></canvas>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Estado</th>
+          <th scope="col">Número de casos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Laço for agora iterando sobre cada estado do JSON -->
+        {% for state in states %}
+        <tr scope="row">
+          <!-- Os dados do laço -->
+          <td>{{ state["name"] }}</td>
+          <td>{{ state["qtd_confirmation"] }}</td>
+        </tr>
+        <!-- No template nós devemos sinalizar o fim do for com um endfor -->
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+  var statesData = {{ states|tojson }};
+  console.log(statesData);
+</script>
 {% endblock %}

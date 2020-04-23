@@ -94,6 +94,21 @@ body {
   font-size: 24px;
 }
 
+.borda-vitoria {
+  border: 4px solid var(--green-border);
+  box-shadow: 0 0 20px var(--green-border);
+}
+
+.borda-derrota {
+  border: 4px solid var(--bg-red);
+  box-shadow: 0 0 20px var(--bg-red);
+}
+
+.borda-empate {
+  border: 4px solid var(--regular-border);
+  box-shadow: 0 0 20px #000000;
+}
+
 @media (max-width: 576px) {
   #jogadas {
     flex-direction: column;

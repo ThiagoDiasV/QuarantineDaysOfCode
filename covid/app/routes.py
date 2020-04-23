@@ -12,7 +12,7 @@ def index():
     world_total_data = request.json()[0]
 
     world_data = {
-        key: value for key, value in world_total_data.items() 
+        key: f"{value:,}".replace(',', '.') for key, value in world_total_data.items() 
         if key == "confirmed" or key == "deaths" or key == "recovered"
         }
 
